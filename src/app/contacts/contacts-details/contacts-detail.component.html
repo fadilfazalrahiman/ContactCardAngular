@@ -1,0 +1,30 @@
+<div class="container">
+  <img [src]="contact?.imageUrl" [alt]="contact?.firstName" class="contact-image ">
+
+  <div class="row">
+    <div class="col-md-11">
+      <h2>Contact Details</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="size"><strong>{{contact?.firstName}} {{contact?.lastName}}</strong></div>
+      <div><strong>Date Of Birth:</strong> {{contact?.dateOfBirth | date}}, ({{contact?.age}} yrs)</div>  
+      <div><strong>Telephone:</strong> {{contact?.telephone}}</div>
+      <div *ngIf="contact?.mobile"><strong>Price:</strong> {{contact?.mobile}}</div>
+      <div><strong>Email:</strong> {{contact?.emailID}}</div>
+    </div>
+    <div class="col-md-6">
+      <address>
+        <strong>Address:</strong><br />
+        {{contact?.location?.address}}<br />
+        {{contact?.location?.city}}, {{contact?.location?.state}}
+      </address>
+    </div>
+  </div>
+  <hr>
+  <div *ngIf="contact?.notes">
+    <h3>Notes</h3>
+    {{contact?.notes}}
+  </div>
